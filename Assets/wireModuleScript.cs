@@ -346,14 +346,17 @@ public class wireModuleScript : MonoBehaviour
             return;
         }
 
-        for(int i = 0; i <= 4; i++)
+        foreach(KMSelectable wire in selectedWires)
         {
-            if(selectedWires[i].GetComponent<WireDetails>().wireColour == "blue" && selectedWires[i].GetComponent<WireDetails>().numberIndex == "3")
+            if(wire.GetComponent<WireDetails>().wireColour == "blue" && wire.GetComponent<WireDetails>().numberIndex == "3")
             {
-                selectedWires[i].GetComponent<WireDetails>().correctWire = true;
+                wire.GetComponent<WireDetails>().correctWire = true;
                 correctRule = 6;
-                return;
             }
+        }
+        if(correctRule == 6)
+        {
+            return;
         }
 
         if(selectedColours.Where((x) => x.Equals("green")).Count() == 1 && selectedColours.Where((x) => x.Equals("orange")).Count() >= 1)
