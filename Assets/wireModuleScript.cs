@@ -236,21 +236,21 @@ public class wireModuleScript : MonoBehaviour
                     }
                 }
             }
-            else if(selectedColours.Where((x) => x.Equals("yellow")).Count() >= 1)
-            {
-                foreach(KMSelectable wire in selectedWires)
-                {
-                    if(wire.GetComponent<WireDetails>().wireColour == "yellow")
-                    {
-                        wire.GetComponent<WireDetails>().correctWire = true;
-                    }
-                }
-            }
             else if(selectedColours.Where((x) => x.Equals("white")).Count() >= 1)
             {
                 foreach(KMSelectable wire in selectedWires)
                 {
                     if(wire.GetComponent<WireDetails>().wireColour == "white")
+                    {
+                        wire.GetComponent<WireDetails>().correctWire = true;
+                    }
+                }
+            }
+            else if(selectedColours.Where((x) => x.Equals("yellow")).Count() >= 1)
+            {
+                foreach(KMSelectable wire in selectedWires)
+                {
+                    if(wire.GetComponent<WireDetails>().wireColour == "yellow")
                     {
                         wire.GetComponent<WireDetails>().correctWire = true;
                     }
@@ -511,7 +511,7 @@ public class wireModuleScript : MonoBehaviour
                     correctRule = 15;
                 }
             }
-            if(!rule14)
+            if(!rule15)
             {
                 for(int i = 0; i <=4; i++)
                 {
@@ -523,7 +523,7 @@ public class wireModuleScript : MonoBehaviour
                     }
                 }
             }
-            if(!rule14)
+            if(!rule15)
             {
                 for(int i = 0; i <=4; i++)
                 {
