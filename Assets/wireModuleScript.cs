@@ -262,21 +262,21 @@ public class wireModuleScript : MonoBehaviour
 
         if((coloursIn1.Count() >= 3 && coloursIn1.Distinct().Count() == 1) || (coloursIn2.Count() >= 3 && coloursIn2.Distinct().Count() == 1) || (coloursIn3.Count() >= 3 && coloursIn3.Distinct().Count() == 1) || (coloursInA.Count() >= 3 && coloursInA.Distinct().Count() == 1) || (coloursInB.Count() >= 3 && coloursInB.Distinct().Count() == 1) || (coloursInC.Count() >= 3 && coloursInC.Distinct().Count() == 1))
         {
-            if(selectedColours.Where((x) => x.Equals("white")).Count() >= 1)
+            if(selectedColours.Where((x) => x.Equals("yellow")).Count() >= 1)
             {
                 foreach(KMSelectable wire in selectedWires)
                 {
-                    if(wire.GetComponent<WireDetails>().wireColour == "white")
+                    if(wire.GetComponent<WireDetails>().wireColour == "yellow")
                     {
                         wire.GetComponent<WireDetails>().correctWire = true;
                     }
                 }
             }
-            else if(selectedColours.Where((x) => x.Equals("yellow")).Count() >= 1)
+            else if(selectedColours.Where((x) => x.Equals("white")).Count() >= 1)
             {
                 foreach(KMSelectable wire in selectedWires)
                 {
-                    if(wire.GetComponent<WireDetails>().wireColour == "yellow")
+                    if(wire.GetComponent<WireDetails>().wireColour == "white")
                     {
                         wire.GetComponent<WireDetails>().correctWire = true;
                     }
