@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: skinnyWires
   title: Skinny Wires
-  description: 'Skinny Wires 1.11
+  description: 'Skinny Wires 1.12
 
     Wires so skinny you could cut them with nail scissors.
 
@@ -25,6 +25,6 @@ MonoBehaviour:
 
 
     Manual available here: https://ktane.timwi.de/HTML/Skinny%20Wires.html'
-  version: 1.11
+  version: 1.12
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 7cf490444d51c41cf913ecc59df98ba5, type: 3}
