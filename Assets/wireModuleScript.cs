@@ -44,7 +44,6 @@ public class wireModuleScript : MonoBehaviour
     void Awake()
     {
         moduleId = moduleIdCounter++;
-        Debug.LogFormat("[Skinny Wires #{0}] NOTE: This is an unofficial local version of this module. Please contact “Thomas the Real Person#3956” on Discord with any bugs.", moduleId);
     }
 
 
