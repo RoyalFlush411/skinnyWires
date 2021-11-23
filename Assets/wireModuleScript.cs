@@ -410,8 +410,9 @@ public class wireModuleScript : MonoBehaviour
                 selectedWires[i].GetComponent<WireDetails>().correctWire = true;
                 correctRule = 9;
             }
-            return;
         }
+        if(correctRule == 9)
+            return;
 
         if(selectedColours.Where((x) => x.Equals("pink")).Count() > 1)
         {
