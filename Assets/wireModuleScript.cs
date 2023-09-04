@@ -9,6 +9,8 @@ public class wireModuleScript : MonoBehaviour
 {
     public KMBombInfo Bomb;
     public KMAudio Audio;
+    public KMColorblindMode Colorblind;
+    public TextMesh colorblindText;
     public KMSelectable[] allWires;
     public KMSelectable[] selectedWires;
 
@@ -113,6 +115,8 @@ public class wireModuleScript : MonoBehaviour
         {
             KMSelectable clickedWire = wire;
             wire.OnInteract += delegate () { WireSnip(clickedWire); return false; };
+            wire.OnHighlight += delegate () { WireHighlight(clickedWire); };
+            wire.OnHighlightEnded += delegate () { WireHighlightEnd(); };
         }
     }
 
@@ -674,5 +678,17 @@ public class wireModuleScript : MonoBehaviour
             GetComponent<KMBombModule>().HandleStrike();
         }
         clickedWire.GetComponent<WireDetails>().wireObject.SetActive(false);
+    }
+
+    void WireHighlight(KMSelectable highlightedWire)
+    {
+        if (Colorblind.ColorblindModeActive)
+            colorblindText.text = highlightedWire.GetComponent<WireDetails>().wireColour;
+    }
+
+    void WireHighlightEnd()
+    {
+        if (Colorblind.ColorblindModeActive)
+            colorblindText.text = "";
     }
 }
